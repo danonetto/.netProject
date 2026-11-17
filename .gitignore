@@ -1,0 +1,11 @@
+# Visual Studio / IDE fájlok
+.vs/
+*.user
+*.suo
+
+# Build eredmények
+[Bb]in/
+[Oo]bj/
+
+# MAUI / .NET specifikus
+*.binlog
