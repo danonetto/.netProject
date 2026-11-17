@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using WorkouTracker.ViewModels;
+using WorkouTracker.Views;
 
 namespace WorkouTracker
 {
@@ -14,9 +16,13 @@ namespace WorkouTracker
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<MainViewModel>();
 
+            builder.Services.AddSingleton<App>();
+            builder.Services.AddSingleton<AppShell>();
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
